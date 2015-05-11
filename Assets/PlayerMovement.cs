@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, distance);
         for(int i = 0; i < hitColliders.Length; i++)
         {
-            if(hitColliders[i].GetComponent<WinningObject>())
+            if(hitColliders[i].tag == "Winning Object")
             {
                 Debug.Log("Object is near");
             }
@@ -75,8 +75,7 @@ public class PlayerMovement : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit, distance))
             {
-                WinningObject win = hit.collider.GetComponent<WinningObject>();
-                if(win!=null)
+                if(hit.collider.tag == "Winning Object")
                 {
                     Debug.Log("hit winning object");
                 }
