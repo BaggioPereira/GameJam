@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     int levelcounter = 1;
 
     float transparencyCap = 0.60f;
+    public Text timer;
+    float seconds = 30;
+    AudioSource heart;
 
     // Use this for initialization
     void Start()
@@ -26,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         player.AddComponent<CharacterController>();
         controller = (CharacterController)player.transform.GetComponent("CharacterController");
         overlay = GameObject.Find("Overlay");
-        
+        heart = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,15 @@ public class PlayerMovement : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel);
         }
         checkWinning();
+
+        seconds -= Time.deltaTime;
+        int temp = (int)seconds;
+        timer.text = temp.ToString() + " Seconds";
+
+        if(seconds <= 0)
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     void FixedUpdate()
@@ -76,29 +89,30 @@ public class PlayerMovement : MonoBehaviour
 
                 if(mag<distance)
                 {
-
                     if(c.a < transparencyCap)
-                    //{
+                    {
                         c.a += 0.05f;
-                    //}                      
+                        if(heart.pitch < 1.5)
+                            heart.pitch += 0.05f;
+
+                        Debug.Log(heart.pitch.ToString());
+                    }
+                        
 
                     overlay.GetComponent<Renderer>().material.color = c;
                 }
             }
-
-            //else if(hitColliders[i].tag )
-            //{
-            //    //c = overlay.GetComponent<Renderer>().material.color;
-            //    c.a -= 0.01f;
-            //    Debug.Log("Running else");
-            //    overlay.GetComponent<Renderer>().material.color = c;
-            //}
         }
 
         if(tempDistance > distance)
         {
             c = overlay.GetComponent<Renderer>().material.color;
                c.a -= 0.05f;
+            if(heart.pitch > 1)
+            {
+                heart.pitch -= 0.05f;
+            }
+               
                 Debug.Log("Running else");
                overlay.GetComponent<Renderer>().material.color = c;
 
