@@ -51,11 +51,38 @@ public class PlayerMovement : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+        checkWinning();
     }
 
     void FixedUpdate()
     {
-        if(Physics.CheckSphere(transform.position,distance))
-            Debug.Log("Object is close");
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, distance);
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if(hitColliders[i].GetComponent<WinningObject>())
+            {
+                Debug.Log("Object is near");
+            }
+        }
+
+        
+    }
+
+    void checkWinning()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, transform.forward, out hit, distance))
+            {
+                WinningObject win = hit.collider.GetComponent<WinningObject>();
+                if(win!=null)
+                {
+                    Debug.Log("hit winning object");
+                }
+                
+            }
+
+        }
     }
 }
