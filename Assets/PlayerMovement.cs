@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    GameObject player;
+    GameObject player, overlay;
     CharacterController controller;
+    Color c;
     public float sensitivityX = 10.0f;
     public float sensitivityY = 10.0f;
     public float yRange = 60.0f;
@@ -14,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10.0f;
     private Vector3 moveDirection = Vector3.zero;
     public float distance;
+    int levelcounter = 1;
+
+    float transparencyCap = 0.60f;
 
     // Use this for initialization
     void Start()
@@ -21,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         player.AddComponent<CharacterController>();
         controller = (CharacterController)player.transform.GetComponent("CharacterController");
+        overlay = GameObject.Find("Overlay");
+        
     }
 
     // Update is called once per frame
@@ -37,14 +43,9 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
-        //if (controller.isGrounded && Input.GetButton("Jump"))
-        //{
-        //    verticalVelocity = jump;
-        //}
-
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, Input.GetAxis("Vertical"));
         moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= 10.0f;
+        moveDirection *= speed;
         controller.Move(moveDirection * Time.deltaTime);
 
         if (player.transform.position.y < 0)
@@ -57,15 +58,55 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, distance);
+        GameObject winningObject;
+        float tempDistance = 0;
+
+        //c = overlay.GetComponent<Renderer>().material.color;
         for(int i = 0; i < hitColliders.Length; i++)
-        {
-            if(hitColliders[i].tag == "Winning Object")
+        {   
+            
+            if(hitColliders[i].name == "Winning Object " + levelcounter.ToString())
             {
+                winningObject = hitColliders[i].gameObject;
+                c = overlay.GetComponent<Renderer>().material.color;
                 Debug.Log("Object is near");
+                Vector3 direction = hitColliders[i].transform.position - transform.position;
+                float mag = direction.magnitude;
+                tempDistance = mag;
+
+                if(mag<distance)
+                {
+
+                    if(c.a < transparencyCap)
+                    //{
+                        c.a += 0.05f;
+                    //}                      
+
+                    overlay.GetComponent<Renderer>().material.color = c;
+                }
             }
+
+            //else if(hitColliders[i].tag )
+            //{
+            //    //c = overlay.GetComponent<Renderer>().material.color;
+            //    c.a -= 0.01f;
+            //    Debug.Log("Running else");
+            //    overlay.GetComponent<Renderer>().material.color = c;
+            //}
         }
 
-        
+        if(tempDistance > distance)
+        {
+            c = overlay.GetComponent<Renderer>().material.color;
+               c.a -= 0.05f;
+                Debug.Log("Running else");
+               overlay.GetComponent<Renderer>().material.color = c;
+
+        }
+        else
+        {
+            tempDistance = 0;
+        }
     }
 
     void checkWinning()
@@ -75,13 +116,12 @@ public class PlayerMovement : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit, distance))
             {
-                if(hit.collider.tag == "Winning Object")
+                if(hit.collider.gameObject.name == "Winning Object " + levelcounter.ToString())
                 {
-                    Debug.Log("hit winning object");
+                    Debug.Log("Hit object");
+                    Destroy (GameObject.Find("Door " + levelcounter.ToString()));
                 }
-                
             }
-
         }
     }
 }
