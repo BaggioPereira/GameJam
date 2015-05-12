@@ -23,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
     float seconds = 30;
     AudioSource heart;
 
+    bool timerActive = true;
+    bool doorOpen = true;
+    Transform target;
+    Transform cameraRot;
+
     // Use this for initialization
     void Start()
     {
@@ -58,13 +63,25 @@ public class PlayerMovement : MonoBehaviour
         }
         checkWinning();
 
-        seconds -= Time.deltaTime;
-        int temp = (int)seconds;
-        timer.text = temp.ToString() + " Seconds";
-
-        if(seconds <= 0)
+        if(timerActive)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            seconds -= Time.deltaTime;
+            int temp = (int)seconds;
+            timer.text = temp.ToString() + " Seconds";
+
+            if (seconds <= 0)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+        }
+  
+        if(doorOpen)
+        {
+            //if door open animation
+                Camera.main.transform.LookAt(target);
+
+            //else
+                //Camera.main.transform.LookAt(cameraRot);
         }
     }
 
@@ -73,8 +90,6 @@ public class PlayerMovement : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, distance);
         GameObject winningObject;
         float tempDistance = 0;
-
-        //c = overlay.GetComponent<Renderer>().material.color;
         for(int i = 0; i < hitColliders.Length; i++)
         {   
             
@@ -82,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 winningObject = hitColliders[i].gameObject;
                 c = overlay.GetComponent<Renderer>().material.color;
-                Debug.Log("Object is near");
                 Vector3 direction = hitColliders[i].transform.position - transform.position;
                 float mag = direction.magnitude;
                 tempDistance = mag;
@@ -94,11 +108,7 @@ public class PlayerMovement : MonoBehaviour
                         c.a += 0.05f;
                         if(heart.pitch < 1.5)
                             heart.pitch += 0.05f;
-
-                        Debug.Log(heart.pitch.ToString());
                     }
-                        
-
                     overlay.GetComponent<Renderer>().material.color = c;
                 }
             }
@@ -112,9 +122,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 heart.pitch -= 0.05f;
             }
-               
-                Debug.Log("Running else");
-               overlay.GetComponent<Renderer>().material.color = c;
+            overlay.GetComponent<Renderer>().material.color = c;
 
         }
         else
@@ -132,10 +140,22 @@ public class PlayerMovement : MonoBehaviour
             {
                 if(hit.collider.gameObject.name == "Winning Object " + levelcounter.ToString())
                 {
-                    Debug.Log("Hit object");
-                    Destroy (GameObject.Find("Door " + levelcounter.ToString()));
+                    timerActive = false;
+                    cameraRot = Camera.main.transform;
+                    target = GameObject.Find("Door " + levelcounter.ToString()).transform;
+                    //doorOpen = true;
+                    Destroy(GameObject.Find("Door " + levelcounter.ToString()));
                 }
             }
         }
+    }
+
+    void OnTriggerEnter()
+    {
+        GameObject.Find("LevelCounterPlane " + levelcounter.ToString());
+        Destroy(GameObject.Find("LevelCounterPlane " + levelcounter.ToString()));
+        levelcounter++;
+        
+        Debug.Log(levelcounter);
     }
 }

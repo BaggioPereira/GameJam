@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 90246e8840166c74cba0c3b16d607d1d
-timeCreated: 1431420527
+guid: 4db4f42a88eb67948bbd1b4639061cda
+timeCreated: 1431424114
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -121,111 +121,7 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      firstFrame: 5
-      lastFrame: 51
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: body
-        weight: 1
-      - path: Box003
-        weight: 1
-      - path: Sphere001
-        weight: 1
-      - path: spine1
-        weight: 1
-      - path: spine1/Bone010
-        weight: 1
-      - path: spine1/left_leg
-        weight: 1
-      - path: spine1/left_leg/left_shin
-        weight: 1
-      - path: spine1/left_leg/left_shin/Bone013(mirrored)
-        weight: 1
-      - path: spine1/left_leg/left_shin/Box007
-        weight: 1
-      - path: spine1/left_legIK
-        weight: 1
-      - path: spine1/right_leg
-        weight: 1
-      - path: spine1/right_leg/right_shin
-        weight: 1
-      - path: spine1/right_leg/right_shin/Bone013
-        weight: 1
-      - path: spine1/right_leg/right_shin/Box005
-        weight: 1
-      - path: spine1/right_legIK
-        weight: 1
-      - path: spine1/spine2
-        weight: 1
-      - path: spine1/spine2/spine3
-        weight: 1
-      - path: spine1/spine2/spine3/spine4
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/Bone008
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_armIK
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_shoulderBlade
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/Bone015(mirrored)
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm/left_lowerArm
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm/left_lowerArm/Bone018(mirrored)
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm/left_lowerArm/Box006
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/neckBone
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/neckBone/Bone004
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/neckBone/HeadBone
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/neckBone/HeadBone/Bone002
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/neckBone/HeadBone/Object001
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_armIK
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_shoulderBlade
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/Bone015(mirrored)(mirrored)
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm/right_lowerArm
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm/right_lowerArm/Bone018(mirrored)(mirrored)
-        weight: 1
-      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm/right_lowerArm/Box004
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
