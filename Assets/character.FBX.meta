@@ -1,0 +1,270 @@
+fileFormatVersion: 2
+guid: 90246e8840166c74cba0c3b16d607d1d
+timeCreated: 1431420527
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: body
+    100002: Bone002
+    100004: Bone004
+    100006: Bone008
+    100008: Bone010
+    100010: Bone013
+    100012: Bone013(mirrored)
+    100014: Bone015(mirrored)
+    100016: Bone015(mirrored)(mirrored)
+    100018: Bone018(mirrored)
+    100020: Bone018(mirrored)(mirrored)
+    100022: Box003
+    100024: Box004
+    100026: Box005
+    100028: Box006
+    100030: Box007
+    100032: //RootNode
+    100034: HeadBone
+    100036: left_arm
+    100038: left_armIK
+    100040: left_leg
+    100042: left_legIK
+    100044: left_lowerArm
+    100046: left_shin
+    100048: left_shoulderBlade
+    100050: neckBone
+    100052: Object001
+    100054: right_arm
+    100056: right_armIK
+    100058: right_leg
+    100060: right_legIK
+    100062: right_lowerArm
+    100064: right_shin
+    100066: right_shoulderBlade
+    100068: Sphere001
+    100070: spine1
+    100072: spine2
+    100074: spine3
+    100076: spine4
+    400000: body
+    400002: Bone002
+    400004: Bone004
+    400006: Bone008
+    400008: Bone010
+    400010: Bone013
+    400012: Bone013(mirrored)
+    400014: Bone015(mirrored)
+    400016: Bone015(mirrored)(mirrored)
+    400018: Bone018(mirrored)
+    400020: Bone018(mirrored)(mirrored)
+    400022: Box003
+    400024: Box004
+    400026: Box005
+    400028: Box006
+    400030: Box007
+    400032: //RootNode
+    400034: HeadBone
+    400036: left_arm
+    400038: left_armIK
+    400040: left_leg
+    400042: left_legIK
+    400044: left_lowerArm
+    400046: left_shin
+    400048: left_shoulderBlade
+    400050: neckBone
+    400052: Object001
+    400054: right_arm
+    400056: right_armIK
+    400058: right_leg
+    400060: right_legIK
+    400062: right_lowerArm
+    400064: right_shin
+    400066: right_shoulderBlade
+    400068: Sphere001
+    400070: spine1
+    400072: spine2
+    400074: spine3
+    400076: spine4
+    2300000: Box004
+    2300002: Box005
+    2300004: Box006
+    2300006: Box007
+    2300008: Object001
+    3300000: Box004
+    3300002: Box005
+    3300004: Box006
+    3300006: Box007
+    3300008: Object001
+    4300000: body
+    4300002: Box003
+    4300004: Sphere001
+    4300006: Object001
+    4300008: Box006
+    4300010: Box004
+    4300012: Box007
+    4300014: Box005
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: body
+    13700002: Box003
+    13700004: Sphere001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 51
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: Box003
+        weight: 1
+      - path: Sphere001
+        weight: 1
+      - path: spine1
+        weight: 1
+      - path: spine1/Bone010
+        weight: 1
+      - path: spine1/left_leg
+        weight: 1
+      - path: spine1/left_leg/left_shin
+        weight: 1
+      - path: spine1/left_leg/left_shin/Bone013(mirrored)
+        weight: 1
+      - path: spine1/left_leg/left_shin/Box007
+        weight: 1
+      - path: spine1/left_legIK
+        weight: 1
+      - path: spine1/right_leg
+        weight: 1
+      - path: spine1/right_leg/right_shin
+        weight: 1
+      - path: spine1/right_leg/right_shin/Bone013
+        weight: 1
+      - path: spine1/right_leg/right_shin/Box005
+        weight: 1
+      - path: spine1/right_legIK
+        weight: 1
+      - path: spine1/spine2
+        weight: 1
+      - path: spine1/spine2/spine3
+        weight: 1
+      - path: spine1/spine2/spine3/spine4
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/Bone008
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_armIK
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_shoulderBlade
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/Bone015(mirrored)
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm/left_lowerArm
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm/left_lowerArm/Bone018(mirrored)
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/left_shoulderBlade/left_arm/left_lowerArm/Box006
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/neckBone
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/neckBone/Bone004
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/neckBone/HeadBone
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/neckBone/HeadBone/Bone002
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/neckBone/HeadBone/Object001
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_armIK
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_shoulderBlade
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/Bone015(mirrored)(mirrored)
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm/right_lowerArm
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm/right_lowerArm/Bone018(mirrored)(mirrored)
+        weight: 1
+      - path: spine1/spine2/spine3/spine4/right_shoulderBlade/right_arm/right_lowerArm/Box004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
